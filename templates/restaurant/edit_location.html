@@ -1,0 +1,147 @@
+{% extends 'restaurant/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        {% comment %} <div class="col-lg-8">
+          <h1><span>Restaurant Owner</span></h1>
+
+          <div class="btns">
+            <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
+            <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Book a Table</a>
+          </div>
+        </div> {% endcomment %}
+        <h1><span>Edit Location</span></h1>
+
+        <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
+          {% for i in app_update %}
+
+
+          <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+       
+           
+            <div class="row mb-4">
+              <div class="col-12">
+                <div class="form-outline">
+                  <input type="text" id="formControlLgExpk" name="location"  placeholder="Location" value="{{i.location}}" class="form-control form-control-lg"  required=""/>
+                  <br>
+                </div>
+              </div>
+         
+
+              <div class="col-12">
+                <div class="form-outline">
+                  <input type="text"  name="map"  placeholder="Map" class="form-control form-control-lg"  required=""/>
+                  <br>
+                </div>
+              </div>
+              <br><p>Opening time & closing time</p>
+
+              <div class="col-6">
+                <div class="form-outline">
+                  <input type="time"  name="otime"  placeholder="Opening"  required=""/>
+                  <br>
+                </div>
+              </div>
+
+              <div class="col-6">
+                <div class="form-outline">
+                  <input type="time"  name="ctime"  placeholder="Closing"  required=""/>
+                  <br>
+                </div>
+              </div>
+
+
+
+
+              {% comment %} <div class="col-12">
+                <div class="form-outline">
+                    <textarea class="form-control w-100" name="blog"  cols="30" rows="6"  placeholder = 'Blog Content' required ></textarea><br>
+                </div>
+              </div>
+              <br> {% endcomment %}
+
+                  
+              
+             
+             
+              <div class="col-6">
+                <div class="form-outline">
+                  <br>
+                  <button type="Submit" class="btn btn-success btn-lg btn-block">Add</button>
+                </div>
+              </div>
+            </div>
+        
+            {% comment %} <button type="Submit" class="btn btn-success btn-lg btn-block">Register</button> {% endcomment %}
+          </form>
+        
+
+
+
+
+{% comment %} 
+
+          <form class="form-contact contact_form" action="" method="post" id="contactForm" novalidate="novalidate" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+              <input class="form-control" name="location" id="loc" type="text"  placeholder = 'Location' value="{{i.location}}">
+              <br>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="form-group">
+              <input class="form-control" name="map" id="name" type="text"  placeholder = 'Add map'>
+              <br>
+            </div>
+        </div>
+        <br><p>Opening time & closing time</p>
+        <div class="col-sm-6">
+            <div class="form-group">
+              <input class="form-control" name="otime"  type="time"  placeholder = 'Opening Time' >
+              <br>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="form-group">
+              <input class="form-control" name="ctime"  type="time"  placeholder = 'Closing Time'>
+              <br>
+            </div>
+        </div>
+ 
+    </div>
+    <div class="form-group mt-3">
+      <button type="submit" class="button button-contactForm btn_4 boxed-btn">Add</button>
+    </div>
+  </form> {% endcomment %}
+  {% endfor %}
+        </div> 
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+
+
+
+
+
+
+  {% endblock %}

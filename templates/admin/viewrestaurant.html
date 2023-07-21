@@ -1,0 +1,83 @@
+{% extends 'admin/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="400">
+      <div class="row">
+        {% comment %} <div class="col-lg-8">
+          <h2 class="mb-3 bread">Search Locations</h2>
+                <form action="" method="post" enctype="multipart/form-data" class="p-4 p-md-5 contact-form">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="text" name="address" class="form-control" placeholder="Location">
+                                <br>  
+                            </div>
+                        </div>
+                      
+                        <div class="col-md-12">
+                            <div class="form-group" aling="center">
+                                <input type="submit" name="add" value="Search Now" class="nav-link scrollto active">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+        </div> {% endcomment %}
+        <h1>Restaurant List</1>
+        
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+
+
+
+
+
+<section id="why-us" class="why-us">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <p>Restaurant List</p>
+      </div>
+
+      <div class="row">
+
+
+  {% for j in sv  %}
+    
+        <div class="col-lg-4">
+          <div class="box" data-aos="zoom-in" data-aos-delay="100"> 
+            <span>{{j.restaurant.user.first_name}}</span>
+            <h4>{{j.location}}</h4>
+            {% comment %} <h4>{{j.location}}</h4> {% endcomment %}
+            <p><a href="view?id={{j.id}}" class="btn-custom">Detailed View</a></p>
+
+          </div>
+        </div>
+ 
+        {% endfor %}
+      </div>
+
+    </div>
+  </section><!-- End Why Us Section -->
+
+
+
+
+
+  {% endblock %}

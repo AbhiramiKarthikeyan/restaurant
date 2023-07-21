@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+
+
+<!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-8">
+        <h1>Feedback</h1>
+
+
+
+
+
+        <form action="feedback" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+       
+           
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="form-outline">
+                      <input type="text" id="formControlLgExpk" name="name"  placeholder="Name" class="form-control form-control-lg"  required=""/>
+                      <br>
+                    </div>
+                  </div>
+                  <br>
+                  <div class="col-12">
+                    <div class="form-outline">
+                        <select type="text" name="id" class="form-control" placeholder="category">
+                            <option value="">Select Restaurant</option>
+                            {% for i in fe %}
+                            <option value="{{i.id}}">{{i.user.first_name}}</option>
+                            {% endfor %}
+                        </select><br>
+
+                     
+                    </div>
+                  </div>
+
+
+
+                
+              
+            
+
+              <div class="col-12">
+                <div class="form-outline">
+                  <input type="text" id="formControlLgExpk" name="feedback" placeholder="Feedback" class="form-control form-control-lg" required=""/>
+                </div>
+              </div>
+        
+            
+             
+              <div class="col-6">
+                <div class="form-outline">
+                  <br>
+                  <button type="Submit" class="btn btn-success btn-lg btn-block">Register</button>
+                </div>
+              </div>
+            </div>
+        
+            {% comment %} <button type="Submit" class="btn btn-success btn-lg btn-block">Register</button> {% endcomment %}
+          </form>
+
+
+
+
+
+
+{% comment %} 
+        <form  action="" id="contact-form" method="POST">
+            {% csrf_token %}
+            <!-- section tittle -->
+            <div class="row ">
+                <div class="col-lg-12">
+                    <div class="section-tittle tittle-form text-center mb-30">
+                        <img src="{% static 'assets/img/gallery/tittle_img2.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-lg-12"><br>
+                    <div class="form-box subject-icon mb-30">
+                        <textarea name="name"  placeholder="Your Name"></textarea>
+
+                    </div>
+                </div>
+                <br>
+                <select type="text" name="id" class="form-control" placeholder="category">
+                    <option value="">Select Restaurant</option>
+                    {% for i in fe %}
+                    <option value="{{i.id}}">{{i.user.first_name}}</option>
+                    {% endfor %}
+                </select><br>
+                <div class="col-lg-12"><br>
+                    <div class="form-box subject-icon mb-30">
+                        <textarea name="feedback"  placeholder="Your Feedback"></textarea>
+
+                    </div>
+                </div>
+                <div class="col-lg-12">
+                    <div class="submit-info">
+                        <button class="btn" type="submit">Add Now</button>
+                    </div>
+                </div>
+            </div>
+        </form> {% endcomment %}
+         
+        </div>
+        
+
+      </div>
+    </div>
+  </section>
+  <!-- End Hero --> 
+
+
+
+
+
+
+
+
+
+
+
+{% comment %}   
+
+  <section id="why-us" class="why-us">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>View</h2>
+        <p>Restaurant Details</p>
+      </div>
+
+      <div class="row">
+{% for i in sh  %}
+        <div class="col-lg-4">
+          <div class="box" data-aos="zoom-in" data-aos-delay="100">
+            <span>{{i.user.first_name}}</span>
+            <h4>{{i.location}}</h4>
+            <p><a href="view_details?id={{j.restaurant_id}}" class="btn-custom">Detailed View</a></p>
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+
+    </div>
+  </section><!-- End Why Us Section -->
+ {% endcomment %}
+
+
+
+
+
+  
+
+  {% endblock %}

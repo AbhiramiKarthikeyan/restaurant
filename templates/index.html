@@ -1,0 +1,268 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1>Welcome to <span>Find Me</span></h1>
+          <h2>Find great restaurants near you..</h2>
+          
+          <div class="btns">
+            {% comment %} {% comment %} <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a> {% endcomment %}
+            <a href="res" class="btn-book animated fadeInUp scrollto">Search for restaurants</a> 
+            <a href="feedback" class="btn-book animated fadeInUp scrollto"> Give Feedback</a> 
+
+          </div>
+        </div>
+        <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
+          {% comment %} <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a> {% endcomment %}
+        </div>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+
+
+    <div class="container">
+      <!-- <======= About Section ======= -->
+      <br>
+      <br>
+      <h1> <span> Blogs </span></h1>
+      <section id="about" class="about">
+        {% for i in bl %}
+        <div class="container" data-aos="fade-up">
+  
+          <div class="row">
+            <div class="col-lg-6 order-1 order-lg-2" data-aos="zoom-in" data-aos-delay="100">
+              <div class="about-img">
+                <img src="{{i.image.url}}" alt="">
+              </div>
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+              <h3>{{i.bname}}</h3><br>
+              
+              
+              <p>
+                {{i.blog}}
+              </p>
+            </div>
+  
+          </div>
+       
+  <br><br>
+        </div>
+        {% endfor %}
+      </section><!-- End About Section -->
+    </div>
+  
+  
+  
+  
+
+    
+
+    
+    
+    
+
+    <!-- ======= Events Section ======= -->
+    <section id="events" class="events">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Events</h2>
+          <p>Organize Your Events in our Restaurant</p>
+        </div>
+
+        <div class="events-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="row event-item">
+                <div class="col-lg-6">
+                  <img src="{% static 'assets/img/event-birthday.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content">
+                  <h3>Birthday Parties</h3>
+                  <div class="price">
+                    {% comment %} <p><span>$189</span></p> {% endcomment %}
+                  </div>
+                  <p class="fst-italic">
+                  Make your special one's special day with our restaurants.
+                  </p>
+                  <ul>
+                    <li><i class="bi bi-check-circled"></i> Cakes and food arrangements</li>
+                    <li><i class="bi bi-check-circled"></i> Decoration with specific theams</li>
+                    <li><i class="bi bi-check-circled"></i> Pocket friendly budjet </li>
+                  </ul>
+                  <p>
+                    You can contact with your favorite restaurant for more enquiry
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="row event-item">
+                <div class="col-lg-6">
+                  <img src="{% static 'assets/img/event-private.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content">
+                  <h3>Private Parties</h3>
+                  <div class="price">
+                    {% comment %} <p><span>$290</span></p> {% endcomment %}
+                  </div>
+                  <p class="fst-italic">
+                   Private parties are available in our restaurants
+                  </p>
+                  <ul>
+                    <li><i class="bi bi-check-circled"></i> Food &Seating arranngements </li>
+                    <li><i class="bi bi-check-circled"></i> Decoration with specific theams</li>
+                    <li><i class="bi bi-check-circled"></i> Pocket friendly budjet</li>
+                  </ul>
+                  <p>
+                    You can contact with your favorite restaurant for more enquiry
+
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+           
+            <div class="swiper-slide">
+              <div class="row event-item">
+                <div class="col-lg-6">
+                  <img src="{% static 'assets/img/event-custom.jpg' %}" class="img-fluid" alt="">
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0 content">
+                  <h3>Custom Parties</h3>
+                  <div class="price">
+                    {% comment %} <p><span>$99</span></p> {% endcomment %}
+                  </div>
+                  <p class="fst-italic">
+                  Customised parties and pre-bookings are available.
+                  </p>
+                  <ul>
+                    <li><i class="bi bi-check-circled"></i> Food and seating arrangements</li>
+                    <li><i class="bi bi-check-circled"></i> Decoration according to customer theam</li>
+                    <li><i class="bi bi-check-circled"></i>Pocket friendly budjet</li>
+                  </ul>
+                  <p>
+                    You can contact with your favorite restaurant for more enquiry
+                  </p>
+                </div>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Events Section -->
+
+   
+    
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Testimonials</h2>
+          <p>Famous Restaurant Quotes </p>
+        </div>
+
+        <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Cooking is not about convenience and it's not about shortcuts. Our hunger for the 20-minute gourmet meal, precut ingredients has severed our lifeline to the satisfactions of cooking.<i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'assets/dowload/download-1.jpg' %}" class="testimonial-img" alt="">
+                <h3>Thomas Keller.</h3>
+                <h4>American  Shef;</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  We live life in restaurants, its the center of social life, where we celebrate with family and friends, make new friends, travel without traveling, and of course, eat.                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'assets/dowload/download-2.jpg' %}" class="testimonial-img" alt="">
+                <h3>Philip Rosenthal</h3>
+                <h4>Television Writer</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  All great deeds and all great thoughts have a ridiculous beginning. Great works are often born on a street corner or in a restaurant's revolving door.                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'assets/dowload/download-3.jpg' %}" class="testimonial-img" alt="">
+                <h3>Albert Camus</h3>
+                <h4>Philosopher</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  A great restaurant does not distinguish itself by how few mistakes it makes but by how well they handle those mistakes. Restaurant is all soul, not brain.                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'assets/dowload/download-5.jpg' %}" class="testimonial-img" alt="">
+                <h3>Danny Meyer</h3>
+                <h4>Restaurateur</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  There's nothing like a home-cooked meal - nothing! When people ask me what the best restaurant is, I say, my house. Food can connect people in a forever sort of way.                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+                <img src="{% static 'assets/dowload/download-7.jpg' %}" class="testimonial-img" alt="">
+                <h3>Giada De Laurentiis</h3>
+                <h4>Chef</h4>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+
+    
+    
+
+
+  </main><!-- End #main -->
+
+
+  {% endblock %}

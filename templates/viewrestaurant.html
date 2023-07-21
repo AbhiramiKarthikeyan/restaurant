@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-8">
+          <h2 class="mb-3 bread">Search Locations</h2>
+                <form action="" method="post" enctype="multipart/form-data" class="p-4 p-md-5 contact-form">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <input type="text" name="address" class="form-control" placeholder="Location">
+                                <br>  
+                            </div>
+                        </div>
+                      
+                        <div class="col-md-12">
+                            <div class="form-group" aling="center">
+                                <input type="submit" name="add" value="Search Now" class="nav-link scrollto active">
+                            </div>
+                        </div>
+                    </div>
+                </form>
+        </div>
+        
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+
+  <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+    <div class="container">
+        {% comment %} <div class="row justify-content-center mb-5 pb-3">
+            <div class="col-md-7 heading-section text-center ftco-animate">
+                <h2 class="mb-4">Register for more details</h2>
+            </div>
+        </div> {% endcomment %}
+
+        <div class="row block-9">
+            <div class="col-md-8">
+               
+                
+            </div>
+        
+        </div>
+    </div>
+</section>
+
+
+
+<section id="why-us" class="why-us">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <p>Restaurant List</p>
+      </div>
+
+      <div class="row">
+
+
+  {% for j in sh  %}
+    
+        <div class="col-lg-4">
+          <div class="box" data-aos="zoom-in" data-aos-delay="100"> 
+            <span>{{j.restaurant.user.first_name}}</span>
+            <h4>{{j.location}}</h4>
+            <h6><a href="view?id={{j.id}}" class="btn-custom">Detailed View</a></h6>
+
+          </div>
+        </div>
+ 
+        {% endfor %}
+      </div>
+
+    </div>
+  </section><!-- End Why Us Section -->
+
+
+
+
+
+  {% endblock %}

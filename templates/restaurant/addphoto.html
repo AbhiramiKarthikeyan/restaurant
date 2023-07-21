@@ -1,0 +1,96 @@
+{% extends 'restaurant/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        {% comment %} <div class="col-lg-8">
+          <h1><span>Restaurant Owner</span></h1>
+
+          <div class="btns">
+            <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
+            <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Book a Table</a>
+          </div>
+        </div> {% endcomment %}
+        <h1><span>Add photo</span></h1>
+
+        <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
+          
+
+
+          <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+       
+          
+                  
+              
+              <div class="col-12">
+                <div class="form-outline">
+                 
+                  <label>Upload Image</label>
+                  <input  class="form-control form-control-lg" name="images" id="name" type="file" required/>
+                  
+                </div>
+              </div>
+             
+              <div class="col-6">
+                <div class="form-outline">
+                  <br>
+                  <button type="Submit" class="btn btn-success btn-lg btn-block">Add</button>
+                </div>
+              </div>
+            </div>
+        
+          </form>
+          
+
+{% comment %} 
+
+          <form class="form-contact contact_form" action="" method="post" id="contactForm" novalidate="novalidate" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+              <input class="form-control" name="images" id="name" type="file" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder = 'Name'>
+              <br>
+            </div>
+        </div>
+       
+        
+
+      
+     
+     
+     
+    </div>
+    <div class="form-group mt-3">
+      <button type="submit" class="button button-contactForm btn_4 boxed-btn">Add</button>
+    </div>
+  </form> {% endcomment %}
+        </div> 
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+
+
+
+
+
+
+
+  {% endblock %}

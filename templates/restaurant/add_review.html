@@ -1,0 +1,146 @@
+{% extends 'restaurant/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+
+
+<!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-8">
+        <h1>Feedback</h1>
+
+
+
+
+          
+        <form action="" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+     
+         
+          <div class="row mb-4">
+           
+            <div class="col-12">
+              <div class="form-outline">
+                <input type="text" id="formControlLgExpk" name="subject"  placeholder = 'Subject' class="form-control form-control-lg"  required=""/>
+                <br>
+              </div>
+            </div>
+
+          
+           <div class="col-12">
+              <div class="form-outline">
+                  <textarea class="form-control w-100" name="feedback"  cols="30" rows="5"  placeholder = 'Feedback' required ></textarea><br>
+              </div>
+            </div>
+            <br> 
+
+                
+          
+           
+            <div class="col-6">
+              <div class="form-outline">
+                <br>
+                <button type="Submit" class="btn btn-success btn-lg btn-block">Add</button>
+              </div>
+            </div>
+          </div>
+      
+          {% comment %} <button type="Submit" class="btn btn-success btn-lg btn-block">Register</button> {% endcomment %}
+        </form>
+      
+
+
+
+
+{% comment %} 
+            <form class="form-contact contact_form" action="" method="post" id="contactForm" novalidate="novalidate" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group">
+                          <input class="form-control" name="subject" id="loc" type="text"  placeholder = 'Subject'>
+                          <br>
+                        </div>
+                    </div>
+                 
+                    <br>
+                    
+            
+                    <div class="col-12">
+                        <div class="form-group">
+                           <textarea class="form-control w-100" name="feedback"  cols="30" rows="4"  placeholder = 'Feedback'></textarea>
+                            <br>
+                          </div>
+                      </div> 
+                 
+                 
+                 
+                </div>
+                <div class="form-group mt-3">
+                  <button type="submit" class="button button-contactForm btn_4 boxed-btn">Add</button>
+                </div>
+              </form>
+          {% endcomment %}
+        </div>
+        
+
+      </div>
+    </div>
+  </section>
+  <!-- End Hero --> 
+
+
+
+
+
+
+
+
+
+
+
+{% comment %}   
+
+  <section id="why-us" class="why-us">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>View</h2>
+        <p>Restaurant Details</p>
+      </div>
+
+      <div class="row">
+{% for i in sh  %}
+        <div class="col-lg-4">
+          <div class="box" data-aos="zoom-in" data-aos-delay="100">
+            <span>{{i.user.first_name}}</span>
+            <h4>{{i.location}}</h4>
+            <p><a href="view_details?id={{j.restaurant_id}}" class="btn-custom">Detailed View</a></p>
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+
+    </div>
+  </section><!-- End Why Us Section -->
+ {% endcomment %}
+
+
+
+
+
+  
+
+  {% endblock %}

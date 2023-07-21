@@ -1,0 +1,91 @@
+{% extends 'admin/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="2000">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1 class="mb-3 bread">Feedbacks</h1>
+                
+        </div>
+        
+      </div>
+    </div>
+  </section><!-- End Hero --> 
+
+
+  <br> <br> <br> 
+  {% comment %} <table class="table table-bordered table-striped table-hover">
+
+<th class="info" style="background-color: lightgreen;">Name</th>
+<th class="info" style="background-color: lightgreen;">Email id</th>
+<th class="info" style="background-color: lightgreen;">Subject</th>
+<th class="info" style="background-color: lightgreen;">Feedback</th>
+<th class="info" style="background-color: lightgreen;">Clear</th>
+
+
+{% for i in cf  %}
+{% csrf_token %}
+
+<tr>
+   <td style="background-color: white">{{ i.user.first_name}}</td>
+   <td style="background-color: white">{{ i.user.email}}</td>
+   <td style="background-color: white">{{ i.subject}}</td>
+   <td style="background-color: white">{{ i.feedback}}</td>
+   
+
+   <td style="background-color: white"><a href="s_reject?id={{ i.user_id}}" class=" btn btn-danger">Delete</a></td>
+
+</tr>
+
+   {% endfor %}
+</table>
+   {% endcomment %}
+
+
+
+   <section id="testimonials" class="testimonials section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Restaurant Reviews</h2>
+        <p>What they're saying about us</p>
+      </div>
+
+      <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
+          {% for i in cf  %}
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>{{ i.feedback}}<i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+              <h3>{{ i.user.first_name}}</h3>
+              <h4>{{ i.subject}}</h4>
+            </div>
+          </div>
+          {% endfor %}
+          
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+  {% endblock %}

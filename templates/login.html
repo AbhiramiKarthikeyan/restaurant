@@ -1,0 +1,144 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+<section id="hero" class="d-flex align-items-center">
+  <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+    <div class="row">
+      {% comment %} <div class="col-lg-8">
+        <h1><span>Restaurant Owner</span></h1>
+
+        <div class="btns">
+          <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
+          <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Book a Table</a>
+        </div>
+      </div> {% endcomment %}
+      <h1><span>Login</span></h1>
+
+      <div class="col-lg-5 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
+       
+        {% comment %} <form class="form-contact contact_form" action="" method="post" id="contactForm" novalidate="novalidate">
+          {% csrf_token %}
+          <div class="row">
+              <div class="col-sm-12">
+                  <div class="form-group">
+                    <input class="form-control" name="username" id="name" type="text"  placeholder = 'Username'>
+                    <br>
+                  </div>
+              </div>
+                
+           
+            <div class="col-12">
+              <div class="form-group">
+                <input class="form-control" name="password"  type="password"  placeholder = 'Password'>
+              </div>
+            </div>
+          </div>
+          <div class="form-group mt-3">
+            <button type="submit" class="button button-contactForm btn_4 boxed-btn">Login</button>
+          </div>
+        </form> {% endcomment %}
+        
+
+        <form action="login" method="post" enctype="multipart/form-data">
+          {% csrf_token %}
+     
+         
+          <div class="row mb-4">
+       
+
+            <div class="col-12">
+              <div class="form-outline">
+                <input type="text" id="formControlLgExpk" name="username" placeholder="Username" class="form-control form-control-lg"  required=""/>
+                <br>
+              </div>
+            </div>
+      
+            <div class="col-12">
+              <div class="form-outline">
+                <input type="password" id="formControlLgcvv" name="password" placeholder="Password" class="form-control form-control-lg" required=""/>
+                <br>
+              </div>
+            </div>
+           
+           
+            <div class="col-6">
+              <div class="form-outline">
+                <br>
+                <button type="Submit" class="btn btn-success btn-lg btn-block">Login</button>
+              </div>
+            </div>
+          </div>
+      
+          {% comment %} <button type="Submit" class="btn btn-success btn-lg btn-block">Login</button> {% endcomment %}
+        </form>
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div> 
+
+    </div>
+  </div>
+</section><!-- End Hero -->
+
+
+
+
+<br><br><br><br><br>
+{% comment %} 
+<div class="col-lg-8 mt-5 mt-lg-0">
+  
+<br>
+<br>
+<center> <h1>Login</h1></center>
+<br>
+<div class="container" align="center">
+  <form class="form-contact contact_form" action="" method="post" id="contactForm" novalidate="novalidate">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+              <input class="form-control" name="username" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'" placeholder = 'Email'>
+              <br>
+            </div>
+        </div>
+          
+     
+      <div class="col-12">
+        <div class="form-group">
+          <input class="form-control" name="password"  type="password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder = 'Password'>
+        </div>
+      </div>
+    </div>
+    <div class="form-group mt-3">
+      <button type="submit" class="button button-contactForm btn_4 boxed-btn">Login</button>
+    </div>
+  </form>
+  </div>
+
+  </div>
+  <br><br><br><br><br><br><br> {% endcomment %}
+
+  {% endblock %}

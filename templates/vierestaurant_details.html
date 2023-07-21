@@ -1,0 +1,215 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+
+{% comment %} <section id="contact" class="contact">
+  <div class="container" data-aos="fade-up">
+<br><br>
+<br>
+
+
+ 
+    <div class="section-title">
+          
+      <p> {{ app.restaurant.user.first_name }} </p>
+
+    </div>
+ 
+  
+  </div>
+  
+
+
+ 
+ 
+</section><!-- End Contact Section --> {% endcomment %}
+
+
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1>Welcome to <span>            <p> {{ app.restaurant.user.first_name }} </p>
+            <br>
+            <h2><u>Enquiry</u></b2>
+           <h2>Email: {{ app.restaurant.user.email }}</h2>  
+            <h2>Mobile: {{ app.restaurant.mobile }} </h2> 
+          </span></h1>
+          {% comment %} <h2>Find great restaurants near you..</h2> {% endcomment %}
+
+          <div class="btns">
+            {% comment %} <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Book a Table</a> {% endcomment %}
+          </div>
+        </div>
+        {% comment %} <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
+          <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a>
+        </div> {% endcomment %}
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+
+
+
+
+
+
+
+
+  
+
+
+<br>
+<br><br><br><br>
+
+
+
+
+
+<div class="container">
+
+
+<section id="gallery" class="gallery">
+
+    <div class="container" data-aos="fade-up">
+      <div class="section-title">
+        <h2>Gallery</h2>
+        <p>Some photos from Our Restaurant</p>
+      </div>
+    </div>
+
+    <div class="container-fluid" data-aos="fade-up" data-aos-delay="100">
+
+      <div class="row g-0">
+        {% for i in app1  %}
+
+
+        <div class="col-lg-3 col-md-4">
+          <div class="gallery-item">
+            <a href="{{ i.image.url }}" class="gallery-lightbox" data-gall="gallery-item">
+              <img src="{{ i.image.url }}" alt="" class="img-fluid">
+            </a>
+          </div>
+        </div>
+ {% endfor %}
+      </div>
+
+    </div>
+  </section><!-- End Gallery Section -->
+
+</div>
+
+
+<div class="container">
+
+  <section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+  <br>
+  
+      <div class="section-title">
+        <h2>Connect</h2>
+        <p>Location</p>
+      </div>
+    </div>
+  
+    {% for i in r  %}
+    <div class="container" data-aos="fade-up">
+      
+        <div class="row mt-5">
+  
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>{{ i.location }}</p>
+              </div>
+              <br>
+            </div>
+          </div>
+  
+          <div class="col-lg-4">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Opening Time:</h4>
+                <p>{{ i.otime }}Am</p>
+                <h4>Closing Time:</h4>
+  
+                <p>{{ i.ctime }}Pm</p>
+              </div>
+              <br>
+            </div>
+          </div>
+  
+        </div>
+        
+  
+      </div>
+  
+    <div data-aos="fade-up">
+      <iframe style="border:0; width: 100%; height: 350px;" src="{{ app.lmap }}" frameborder="0" allowfullscreen></iframe>
+    </div>
+  
+    {% endfor %}
+  
+  </section><!-- End Contact Section -->
+</div>
+
+
+
+  <section id="testimonials" class="testimonials section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Customer Review</h2>
+        <p>What they're saying about us</p>
+      </div>
+
+      <div class="testimonials-slider swiper-container" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
+          {% for i in app_review  %}
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <p>
+                <i class="bx bxs-quote-alt-left quote-icon-left"></i>{{ i.feedback}}<i class="bx bxs-quote-alt-right quote-icon-right"></i>
+              </p>
+              <h3>{{ i.user.first_name}}</h3>
+              {% comment %} <h4>{{ i.subject}}</h4> {% endcomment %}
+            </div>
+          </div>
+          {% endfor %}
+          
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+
+
+
+  <main id="main">
+
+  </main><!-- End #main -->
+
+
+  {% endblock %}

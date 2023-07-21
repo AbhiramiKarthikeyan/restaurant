@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        {% comment %} <div class="col-lg-8">
+          <h1><span>Restaurant Owner</span></h1>
+  
+          <div class="btns">
+            <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
+            <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Book a Table</a>
+          </div>
+        </div> {% endcomment %}
+        <h2><span>Restaurant Registration</span></h2>
+        {% comment %} <p>Amount = <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+            <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z"/>
+          </svg>250/-</p>		 {% endcomment %}
+        <div class="col-lg-6 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
+         
+          
+            <form action="res_reg" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+           
+               
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <div class="form-outline">
+                          <input type="tel" id="formControlLgExpk" name="rname"  placeholder="Restaurant" class="form-control form-control-lg"  required=""/>
+                          <br>
+                        </div>
+                      </div>
+                      <br>
+                      <div class="col-12">
+                        <div class="form-outline">
+                          <input type="tel" id="formControlLgExpk" name="oname"  placeholder="Owner Name" class="form-control form-control-lg"  required=""/>
+                          <br>
+                        </div>
+                      </div>
+
+
+
+                    <div class="col-6">
+                        <div class="form-outline">
+                          <input type="tel" id="formControlLgExpk" name="mobile"  placeholder="mobile" class="form-control form-control-lg" pattern="[0-9]{10}" required=""/>
+                          <br>
+                        </div>
+                      </div>
+                      <br>
+                  
+                  <div class="col-6">
+                    <div class="form-outline">
+                      <input type="email" id="formControlLgExpk" name="email"  placeholder="email" class="form-control form-control-lg"  required=""/>
+                      <br>
+                    </div>
+                  </div>
+                  <br>
+            
+                  <div class="col-12">
+                    <div class="form-outline">
+                        <textarea class="form-control w-100" name="oaddress"  cols="30" rows="2"  placeholder = 'Enter Owner Address' required ></textarea><br>
+                    </div>
+                  </div>
+                  <br>
+
+                  <div class="col-6">
+                    <div class="form-outline">
+                      <input type="text" id="formControlLgExpk" name="username" placeholder="Username" class="form-control form-control-lg" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" required=""/>
+                    </div>
+                  </div>
+            
+                  <div class="col-6">
+                    <div class="form-outline">
+                      <input type="password" id="formControlLgcvv" name="password" placeholder="Password" class="form-control form-control-lg" required="" pattern="{6,}"/>
+                    </div>
+                  </div>
+                  <div class="col-6">
+                    <div class="form-outline">
+                      <br>
+                      
+                      <input  class="form-control form-control-lg" name="image" id="name" type="file" placeholder = 'Licence' this.placeholder='Licence'>
+                      <label>Upload restaurant Licence</label>
+                    </div>
+                  </div>
+                 
+                  <div class="col-6">
+                    <div class="form-outline">
+                      <br>
+                      <button type="Submit" class="btn btn-success btn-lg btn-block">Register</button>
+                    </div>
+                  </div>
+                </div>
+            
+                {% comment %} <button type="Submit" class="btn btn-success btn-lg btn-block">Register</button> {% endcomment %}
+              </form>
+            
+  
+  
+  
+  
+  
+        </div> 
+  
+      </div>
+    </div>
+  </section><!-- End Hero -->
+  <br>  <br>  <br>  <br>
+  
+  
+
+
+
+  {% endblock %}
+
+
+
+
+ 

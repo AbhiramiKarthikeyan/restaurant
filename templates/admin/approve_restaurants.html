@@ -1,0 +1,81 @@
+{% extends 'admin/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-18">
+          <h1>Restaurant Management</h1>
+
+          {% comment %} <div class="btns">
+            <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
+            <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Book a Table</a>
+          </div> {% endcomment %}
+        </div>
+        {% comment %} <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
+          <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a>
+        </div> {% endcomment %}
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+
+  <div class="container">
+  
+    <br> <br> <br> 
+   <table class="table table-bordered table-striped table-hover">
+
+<th class="info" style="background-color: lightgreen;">Restaurant Name</th>
+{% comment %} <th class="info" style="background-color: lightgreen;">Restaurant Address</th> {% endcomment %}
+<th class="info" style="background-color: lightgreen;">Owner Name</th>
+<th class="info" style="background-color: lightgreen;">Owner Address</th>
+<th class="info" style="background-color: lightgreen;">Email</th>
+<th class="info" style="background-color: lightgreen;">Phone</th>
+<th class="info" style="background-color: lightgreen;">Licence</th>
+
+<th class="info" style="background-color: lightgreen;">Payment</th>
+
+<th class="info" style="background-color: lightgreen;">Verify</th>
+<th class="info" style="background-color: lightgreen;">Reject</th>
+{% for i in app_rs  %}
+{% csrf_token %}
+
+<tr>
+    <td style="background-color: white">{{ i.user.first_name}}</td>
+    {% comment %} <td style="background-color: white">{{ i.raddress}}</td> {% endcomment %}
+    <td style="background-color: white">{{ i.oname}}</td>
+    <td style="background-color: white">{{ i.oaddress}}</td>
+    <td style="background-color: white">{{ i.user.email}}</td>
+    <td style="background-color: white">{{ i.mobile}}</td>
+    <td><img style="max-width: 200px;max-height:140px;" src="{{ i.license.url }}"></td>
+
+    <td style="background-color: white">{{ i.payment}}</td>
+
+    
+
+    <td style="background-color: white"><a href="s_approve?id={{ i.user_id}}" class=" btn btn-success">Verify</a></td>
+    <td style="background-color: white"><a href="s_reject?id={{ i.user_id}}" class=" btn btn-danger">Reject</a></td>
+
+</tr>
+
+    {% endfor %}
+</table>
+</div>
+
+
+
+  {% endblock %}

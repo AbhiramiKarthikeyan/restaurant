@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+
+<section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        {% comment %} <div class="col-lg-8">
+          <h1><span>Restaurant Owner</span></h1>
+  
+          <div class="btns">
+            <a href="#menu" class="btn-menu animated fadeInUp scrollto">Our Menu</a>
+            <a href="#book-a-table" class="btn-book animated fadeInUp scrollto">Book a Table</a>
+          </div>
+        </div> {% endcomment %}
+        <h2><span>Payment</span></h2>
+        <p>Amount = <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-currency-rupee" viewBox="0 0 16 16">
+            <path d="M4 3.06h2.726c1.22 0 2.12.575 2.325 1.724H4v1.051h5.051C8.855 7.001 8 7.558 6.788 7.558H4v1.317L8.437 14h2.11L6.095 8.884h.855c2.316-.018 3.465-1.476 3.688-3.049H12V4.784h-1.345c-.08-.778-.357-1.335-.793-1.732H12V2H4v1.06Z"/>
+          </svg>50/-</p>		
+        <div class="col-lg-5 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
+         
+          
+            <form action="payment" method="post">
+                {% csrf_token %}
+               
+            
+                  <img class="img-fluid" src="https://img.icons8.com/color/48/000000/mastercard-logo.png" />
+                
+                  <img class="img-fluid" src="https://img.icons8.com/color/48/000000/visa.png" />
+            
+            
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="checkoutForm3"
+                      checked />
+                    <label class="form-check-label" for="checkoutForm3">
+                      Credit card
+                    </label>
+                  </div>
+            
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="checkoutForm4" />
+                    <label class="form-check-label" for="checkoutForm4">
+                      Debit card
+                    </label>
+                  </div>
+            
+                  <div class="form-check mb-4">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="checkoutForm5" />
+                    <label class="form-check-label" for="checkoutForm5">
+                      Paypal
+                    </label>
+                  </div>
+            
+            
+                <div class="form-outline mb-4">
+                  <input type="text" id="formControlLgXsd" class="form-control form-control-lg"  required=""/>
+                  <label class="form-label" for="formControlLgXsd">Cardholder's Name</label>
+                </div>
+            
+                <div class="row mb-4">
+                    <div class="col-7">
+                      <div class="form-outline">
+                        <input type="hidden" id="formControlLgXM" class="form-control form-control-lg" name="id" value= "{{user.id}}"  required="" />
+                      </div>
+                    </div>
+                <div class="row mb-4">
+                  <div class="col-7">
+                    <div class="form-outline">
+                      <input type="text" id="formControlLgXM" class="form-control form-control-lg" required="" pattern="[0-9]{16}"/>
+                      <label class="form-label" for="formControlLgXM">Card Number</label>
+                    </div>
+                  </div>
+            
+                  <div class="col-3">
+                    <div class="form-outline">
+                      <input type="text" id="formControlLgExpk" class="form-control form-control-lg"  required=""/>
+                      <label class="form-label" for="formControlLgExpk">Expire</label>
+                    </div>
+                  </div>
+            
+                  <div class="col-2">
+                    <div class="form-outline">
+                      <input type="password" id="formControlLgcvv" class="form-control form-control-lg" required="" pattern="[0-9]{3}"/>
+                      <label class="form-label" for="formControlLgcvv">CVV</label>
+                    </div>
+                  </div>
+                </div>
+            
+                <button type="Submit" class="btn btn-success btn-lg btn-block">Make Payment</button>
+              </form>
+            
+  
+  
+  
+  
+  
+        </div> 
+  
+      </div>
+    </div>
+  </section><!-- End Hero -->
+  
+  
+
+
+
+  {% endblock %}
+
+
+
+
+ 

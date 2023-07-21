@@ -1,0 +1,60 @@
+{% extends 'admin/base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative text-center text-lg-start" data-aos="zoom-in" data-aos-delay="100">
+      <div class="row">
+        <div class="col-lg-8">
+          <h1><span>Admin</span></h1>
+          {% comment %} <h1>Delivering great food for more than 18 years!</h1> {% endcomment %}
+
+          <div class="btns">
+            &nbsp  <a href="res" class="btn-book animated fadeInUp scrollto">Restaurants</a>  &nbsp &nbsp   &nbsp        
+            <a href="review" class="btn-menu animated fadeInUp scrollto">Feedback</a>
+            <br><br>
+            <a href="rs_verify" class="btn-book animated fadeInUp scrollto">Manage Website</a>      
+            <a href="blog" class="btn-book animated fadeInUp scrollto">Add Blogs</a>     
+
+
+          </div>
+        </div>
+        <div class="col-lg-4 d-flex align-items-center justify-content-center position-relative" data-aos="zoom-in" data-aos-delay="200">
+          {% comment %} <a href="https://www.youtube.com/watch?v=GlrxcuEDyF8" class="glightbox play-btn"></a> {% endcomment %}
+        </div>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    
+    
+    
+
+    
+
+    
+    
+
+
+    
+
+    
+  </main><!-- End #main -->
+
+
+  {% endblock %}

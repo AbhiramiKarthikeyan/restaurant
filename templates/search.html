@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+{% if message %}
+<script>
+alert("{{ message }}")
+</script>
+{% endif %}
+
+
+
+ 
+  
+  <br>  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+  <section id="why-us" class="why-us">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>View</h2>
+        <p>Restaurant Details</p>
+      </div>
+
+      <div class="row">
+{% for i in sh  %}
+        <div class="col-lg-4">
+          <div class="box" data-aos="zoom-in" data-aos-delay="100">
+            <span>{{i.restaurant.user.first_name}}</span>
+            <h4>{{i.location}}</h4>
+            <p><a href="view?id={{i.id}}" class="btn-custom">Detailed View</a></p>
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+
+    </div>
+  </section><!-- End Why Us Section -->
+
+
+
+
+
+
+  
+
+  {% endblock %}
